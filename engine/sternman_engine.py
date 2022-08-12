@@ -1,5 +1,3 @@
-from abc import ABC
-
 from .engine import Engine
 
 class SternmanEngine(Engine):

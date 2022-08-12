@@ -1,6 +1,5 @@
+from battery.calculate_duration import calculate_duration
 from .battery import Battery
-from calculate_duration import calculate_duration
-
 
 class SpindlerBattery(Battery):
     def __init__(self, current_date, last_service_date):
@@ -8,5 +7,4 @@ class SpindlerBattery(Battery):
         self.current_date = current_date
         
     def needs_service(self):
-        duration = calculate_duration(self.current_date, self.last_service_date)
-        return duration >= 2
+        return calculate_duration(self.current_date, self.last_service_date, 2)
